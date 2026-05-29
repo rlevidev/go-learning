@@ -1,0 +1,10 @@
+version: "2"
+sql:
+  - engine: "postgresql"
+    queries: "internal/db/query.sql" # Onde estarão suas queries
+    schema: "internal/db/schema.sql" # Onde estará a criação das tabelas
+    gen:
+      go:
+        package: "db"
+        out: "internal/db" # Onde o código Go será gerado
+        emit_json_tags: true # Gera as tags json na struct automaticamente!
